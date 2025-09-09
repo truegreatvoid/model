@@ -1,0 +1,141 @@
+[project]
+name = "model"
+version = "1.0.0"
+description = "Modulo de arquitetura de aplicações de backend"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "truegreadvoid"}]
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.2.4",
+    "django-extensions>=4.1",
+    "ipython>=9.4.0",
+    "django-environ>=0.12.0",
+    "psycopg2-binary>=2.9.10",
+    "django-widget-tweaks>=1.5.0",
+    "daphne>=4.2.1",
+    "pillow>=11.3.0",
+    "pygraphviz>=1.14",
+    "django-cors-headers>=4.7.0",
+    "djangorestframework>=3.16.0",
+    "djangorestframework_simplejwt>=5.5.0",
+    "drf-spectacular",
+    "django-redis",
+    "channels-redis",
+    "requests",
+    "django-filter",
+    "drf-api-tracking",
+    "django-simple-history",
+    "faker>=37.4.2",
+    "supabase>=2.18.1",
+]
+
+[tool.uv.sources]
+export-apps = { workspace = true }
+
+[tool.uv.workspace]
+members = ["packages/export-apps"]
+
+[project.urls]
+Homepage = "https://github.com/truegreadvoid"
+Repository = "https://github.com/truegreadvoid/model"
+
+[project.optional-dependencies]
+dev = ["ruff", "pyright", "pytest", "pytest-xdist"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+fix = true
+show-fixes = true
+indent-width = 4
+exclude = ["venv", ".venv", "env", ".env", "node_modules", "__pycache__"]
+
+[tool.ruff.lint]
+select = [
+    "ASYNC",
+    "A",
+    "ANN",
+    "B",
+    "BLE",
+    "C4",
+    "C90",
+    "COM",
+    "E",
+    "EM",
+    "ERA",
+    "EXE",
+    "F",
+    "FBT",
+    "FIX",
+    "I",
+    "ICN",
+    "ISC",
+    "Q",
+    "RET",
+    "RSE",
+    "S",
+    "SIM",
+    "SLF",
+    "T10",
+    "T20",
+    "TC",
+    "TD",
+    "TRY",
+    "UP",
+    "W",
+    "YTT",
+    "RUF",
+    "N",
+]
+ignore = [
+    "T201", 
+    "COM812", 
+    "Q000", 
+    "F403", 
+    # "F012",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["ANN201", "S101"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.ruff.lint.isort]
+known-first-party = ["auth"]
+force-sort-within-sections = true
+combine-as-imports = true
+
+[tool.pyright]
+typeCheckingMode = "strict"
+pythonVersion = "3.13"
+include = ["src", "tests"]
+exclude = [
+    "**/venv",
+    "**/.venv",
+    "**/env",
+    "**/.env",
+    "**/node_modules",
+    "**/__pycache__",
+]
+venv = ".venv"
+venvPath = "."
+executionEnvironments = [{ root = "src" }]
+
+[tool.pytest.ini_options]
+addopts = "-s --color=yes --tb=short"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
