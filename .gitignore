@@ -22,3 +22,5 @@ wheels/
 
 # Js dependencies
 node_modules/
+
+uv.lock
