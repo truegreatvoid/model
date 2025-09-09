@@ -24,3 +24,5 @@ wheels/
 node_modules/
 
 uv.lock
+
+model.egg-info/

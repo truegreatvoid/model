@@ -5,3 +5,7 @@ Ideia inicial criar um projeto de arquitetura de backend com o Django
 ## Tecnologias
 
 Em pyproject.toml
+
+## Comandos
+
+Em Makefile
