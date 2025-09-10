@@ -28,13 +28,16 @@ dependencies = [
     "django-simple-history",
     "faker>=37.4.2",
     "supabase>=2.18.1",
+    "model-apps",
 ]
 
 [tool.uv.sources]
-export-apps = { workspace = true }
+model-apps = { workspace = true }
 
 [tool.uv.workspace]
-members = ["packages/export-apps"]
+members = [
+    "packages/model-apps",
+]
 
 [project.urls]
 Homepage = "https://github.com/truegreadvoid"

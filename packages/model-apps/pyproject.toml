@@ -9,6 +9,12 @@ description = "Extension module for API"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+  "Django",
+  "djangorestframework",
+  "django-filter",
+  "django-simple-history",
+  "drf-spectacular",
+  "faker",
 ]
 
 [tool.setuptools]
