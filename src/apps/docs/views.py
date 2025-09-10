@@ -1,3 +1,27 @@
-from django.shortcuts import render
+# from model_apps.core.mixins.staffrequired import StaffRequiredMixin
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 
-# Create your views here.
+
+class ProtectedSpectacularAPIView(
+    # StaffRequiredMixin,
+    SpectacularAPIView,
+):
+    pass
+
+
+class ProtectedSwaggerView(
+    # StaffRequiredMixin,
+    SpectacularSwaggerView,
+):
+    pass
+
+
+class ProtectedRedocView(
+    # StaffRequiredMixin,
+    SpectacularRedocView,
+):
+    pass

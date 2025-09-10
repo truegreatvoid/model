@@ -47,7 +47,7 @@ Repository = "https://github.com/truegreadvoid/model"
 dev = ["ruff", "pyright", "pytest", "pytest-xdist"]
 
 [tool.ruff]
-line-length = 88
+line-length = 108
 target-version = "py313"
 fix = true
 show-fixes = true

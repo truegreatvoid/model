@@ -17,3 +17,7 @@ app_ext:
 
 ruff:
 	uvx ruff format .
+
+comando:
+# 	make comando reset_schemas
+	uv run python manage.py $(filter-out $@,$(MAKECMDGOALS))
