@@ -54,6 +54,8 @@ APPS_LIST_PACKAGES = [
     'model_apps.mixin',
     'model_apps.service',
     'model_apps.util',
+    'model_apps.constant',
+    'model_apps.model',
 ]
 APPS_LIST = [
     'apps.docs',
